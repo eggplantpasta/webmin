@@ -22,11 +22,19 @@ Install the prerequisites of PHP and SQLite.
 sudo apt update
 sudo apt install php-sqlite sqlite3
 
-# optional
+# optional GUI SQLite browser
 sudo apt-get install sqlitebrowser
 ```
 
-On the github repository page press the "use this template" button to "Create a new repository". (see [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template))
+On the github repository page press the "use this template" button to "Create a new repository" (see [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template)).
+
+Start the local PHP server.
+
+```bash
+php -S localhost:8080 -t public/ -c config/php.ini
+```
+
+Go to [the website homepage](http://localhost:8000).
 
 ## Development
 
@@ -37,3 +45,5 @@ On the github repository page press the "use this template" button to "Create a 
 * [PHP The Right Way](https://phptherightway.com/)
 * [Standard PHP Package Skeleton](https://github.com/php-pds/skeleton)
 * [SQLite](https://www.sqlite.org/)
+* Stefan Huber's article on the [PHP built-in web server](https://stefanhuber.at/posts/php-builtin-webserver/)
+* [PHP Manual > Built-in web server](https://www.php.net/manual/en/features.commandline.webserver.php)
