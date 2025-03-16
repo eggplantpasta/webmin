@@ -1,4 +1,7 @@
 #!/bin/bash
 
-sqlite3 ../resources/db.sqlite3 < ../src/db/create.sql
-sqlite3 ../resources/db.sqlite3 < ../src/db/seed.sql
+# Figure out environment variables
+export REPO_ROOT=`git rev-parse --show-toplevel`
+
+sqlite3 ${REPO_ROOT}/resources/db.sqlite3 < ${REPO_ROOT}/src/db/create.sql
+sqlite3 ${REPO_ROOT}/resources/db.sqlite3 < ${REPO_ROOT}/src/db/seed.sql

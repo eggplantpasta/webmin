@@ -2,8 +2,6 @@
 
 require_once 'env.php';
 
-echo $db;
-
 $dsn = "sqlite:$db";
 
 try {

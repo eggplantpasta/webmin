@@ -1,3 +1,3 @@
 <?php
 
-$db = $_ENV['REPO_ROOT'] . '/resources/db.sqlite3';
+$dbpath = $_ENV['REPO_ROOT'] . '/resources/db.sqlite3';
