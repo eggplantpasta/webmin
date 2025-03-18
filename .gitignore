@@ -1,4 +1,4 @@
 # SQLite database file
 *.sqlite3
-config.php
 .env
+config.ini
