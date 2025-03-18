@@ -1,4 +1,7 @@
 #!/bin/bash
 
+# Set the PHP_ROOT environment variable
+export PHP_ROOT=$(git rev-parse --show-toplevel)
+
 # Start the server
-PHP_HOME=$(git rev-parse --show-toplevel) bash -c 'php -S localhost:8080 -c ${PHP_HOME}/config/php.ini -t ${PHP_HOME}/public'
+php -S localhost:8080 -c ${PHP_ROOT}/config/php.ini -t ${PHP_ROOT}/public
