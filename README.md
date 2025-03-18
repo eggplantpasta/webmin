@@ -46,4 +46,9 @@ Go to [the website homepage](http://localhost:8000).
 * [Standard PHP Package Skeleton](https://github.com/php-pds/skeleton)
 * [SQLite](https://www.sqlite.org/)
 * Stefan Huber's article on the [PHP built-in web server](https://stefanhuber.at/posts/php-builtin-webserver/)
-* [PHP Manual > Built-in web server](https://www.php.net/manual/en/features.commandline.webserver.php)
+
+**PHP Manual >**
+
+* [Built-in web server](https://www.php.net/manual/en/features.commandline.webserver.php)
+* [Magic constants](https://www.php.net/manual/en/language.constants.magic.php)
+* [parse_ini_file](https://www.php.net/manual/en/function.parse-ini-file.php)
