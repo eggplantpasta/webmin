@@ -19,11 +19,16 @@ The structure of the project folders conforms mostly to the  [Standard PHP Packa
 Install the prerequisites of PHP and SQLite.
 
 ```sh
+# update the machine
 sudo apt update
-sudo apt install php-sqlite sqlite3
+sudo apt upgrade
+sudo apt autoremove
+
+# install php and sqllite
+sudo apt install php-cli php-sqlite3 sqlite3
 
 # optional GUI SQLite browser
-sudo apt-get install sqlitebrowser
+sudo apt install sqlitebrowser
 ```
 
 On the github repository page press the "use this template" button to "Create a new repository" (see [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template)).
@@ -31,10 +36,10 @@ On the github repository page press the "use this template" button to "Create a 
 Start the local PHP server.
 
 ```bash
-php -S localhost:8080 -t public/ -c config/php.ini
+deploy/localserve.sh
 ```
 
-Go to [the website homepage](http://localhost:8000).
+Go to [the website homepage](http://localhost:8080).
 
 ## Development
 
@@ -42,6 +47,8 @@ Go to [the website homepage](http://localhost:8000).
 
 ## References
 
+* [SQLite](https://www.sqlite.org/)
+* [Pico CSS](https://picocss.com/) Minimal CSS framework for semantic HTML
 * [PHP The Right Way](https://phptherightway.com/)
 * [Standard PHP Package Skeleton](https://github.com/php-pds/skeleton)
 * [SQLite](https://www.sqlite.org/)
