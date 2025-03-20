@@ -11,10 +11,13 @@ This template is intended to be used for quick non-production hobby websites. It
 
 The structure of the project folders conforms mostly to the  [Standard PHP Package Skeleton](https://github.com/php-pds/skeleton). Refer to that document to determine how to extend this template in an organised manner.
 
-* /src source code not intended to be deployed. 
-* /src/db DDL and DML used to build and seed the database
+* **/bin** executable scripts such as `install.sh` and `serve.sh`
+* **/config** various .ini files
+* **/public** the entry point (web root)
+* **/src** classes and other included PHP code
+* **/db** DDL and DML used to build and seed the database as well as the SQLite data file itself
 
-## Installation (Ubuntu Linux)
+## Getting Started (Debian based Linux)
 
 Install the prerequisites of PHP and SQLite.
 
@@ -33,10 +36,11 @@ sudo apt install sqlitebrowser
 
 On the github repository page press the "use this template" button to "Create a new repository" (see [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template)).
 
-Start the local PHP server.
+Create a local config file based on the example and start the local PHP server.
 
 ```bash
-deploy/localserve.sh
+bin/install.sh
+bin/serve.sh
 ```
 
 Go to [the website homepage](http://localhost:8080).
