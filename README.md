@@ -23,9 +23,7 @@ Install the prerequisites of PHP and SQLite.
 
 ```sh
 # update the machine
-sudo apt update
-sudo apt upgrade
-sudo apt autoremove
+sudo apt-get update && sudo apt-get -y upgrade && sudo apt -y autoremove --purge
 
 # install php and sqllite
 sudo apt install php-cli php-sqlite3 sqlite3
