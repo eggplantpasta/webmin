@@ -1,4 +1,4 @@
-# WebMin
+# WebMin 👾
 
 **A minimal PHP/SQLite website template.**
 
@@ -46,6 +46,8 @@ Go to [the website homepage](http://localhost:8000).
 * [Standard PHP Package Skeleton](https://github.com/php-pds/skeleton)
 * [SQLite](https://www.sqlite.org/)
 * Stefan Huber's article on the [PHP built-in web server](https://stefanhuber.at/posts/php-builtin-webserver/)
+* [PSR-4](https://www.php-fig.org/psr/psr-4/)
+* [Build your own PSR-4 autoloader](https://pretzelhands.com/posts/build-your-own-psr-4-autoloader/)
 
 **PHP Manual >**
 
