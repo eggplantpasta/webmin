@@ -47,18 +47,20 @@ Go to [the website homepage](http://localhost:8080).
 
 ## Development
 
+_content coming_
+
 ## Deployment
+
+_content coming_
 
 ## References
 
 * [SQLite](https://www.sqlite.org/)
+* [PHP](https://www.php.net/) and [PHP The Right Way](https://phptherightway.com/)
 * [Pico CSS](https://picocss.com/) Minimal CSS framework for semantic HTML
-* [PHP The Right Way](https://phptherightway.com/)
 * [Standard PHP Package Skeleton](https://github.com/php-pds/skeleton)
-* [SQLite](https://www.sqlite.org/)
 * Stefan Huber's article on the [PHP built-in web server](https://stefanhuber.at/posts/php-builtin-webserver/)
-* [PSR-4](https://www.php-fig.org/psr/psr-4/)
-* [Build your own PSR-4 autoloader](https://pretzelhands.com/posts/build-your-own-psr-4-autoloader/)
+* [PSR-4](https://www.php-fig.org/psr/psr-4/) and [Build your own PSR-4 autoloader](https://pretzelhands.com/posts/build-your-own-psr-4-autoloader/)
 
 **PHP Manual >**
 
