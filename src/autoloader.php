@@ -7,5 +7,5 @@ function fqcnToPath(string $fqcn) {
 spl_autoload_register(function (string $class) {
     $path = fqcnToPath($class);
 
-    require $path;
+    require __DIR__ . '/' . $path;
 });
