@@ -1,6 +1,6 @@
 <?php
 
-require 'autoload.php';
+require_once 'bootstrap.php';
 
 use Webmin\Alien;
 
