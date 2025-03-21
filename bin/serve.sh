@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# Set the PHP_ROOT environment variable
-export PHP_ROOT=$(git rev-parse --show-toplevel)
+# Set the PHP_ROOT as the root level of the git repo
+ROOT_DIR=$(git rev-parse --show-toplevel)
+
+xdg-open http://localhost:8080
 
 # Start the server
-php -S localhost:8080 -c ${PHP_ROOT}/config/php.ini -t ${PHP_ROOT}/public
+php -S localhost:8080 -c ${ROOT_DIR}/config/php.ini -t ${ROOT_DIR}/public
+
