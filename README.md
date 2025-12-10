@@ -23,7 +23,7 @@ Install the prerequisites of PHP and SQLite.
 
 ```sh
 # update the machine
-sudo apt-get update && sudo apt-get -y upgrade && sudo apt -y autoremove --purge
+sudo apt-get update && sudo apt-get -y upgrade
 
 # install php and sqllite
 sudo apt install php-cli php-sqlite3 sqlite3
@@ -34,7 +34,13 @@ sudo apt install sqlitebrowser
 
 On the github repository page press the "use this template" button to "Create a new repository" (see [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template)).
 
-Create a local config file based on the example and start the local PHP server.
+Clone your new repository locally.
+
+```bash
+git clone https://github.com/eggplantpasta/myproject.git
+```
+
+Create a local config files based on the examples and start the local PHP server.
 
 ```bash
 bin/install.sh
