@@ -1,9 +1,10 @@
 # SQLite database file
 *.sqlite3
 .env
-config.php
 *.log
-php.ini
 vendor/
+var/*
+!var/.gitkeep
 
 config/php.ini
+config/app.ini
