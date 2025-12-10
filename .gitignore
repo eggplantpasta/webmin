@@ -6,3 +6,4 @@ config.php
 php.ini
 vendor/
 
+config/php.ini

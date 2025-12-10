@@ -1,12 +1,10 @@
 <?php
 
-require_once 'bootstrap.php';
-
 use Webmin\Database;
 
 try {
     // Initialize the Database class with the SQLite DSN
-    $db = new Database(SQLITE_DSN);
+    $db = new Database($config['database']['dsn']);
 
     // Define the SQL query
     $sql = 'SELECT * FROM users';

@@ -1,11 +1,11 @@
 # WebMin 👾
 
-**A minimal PHP/SQLite website template.**
+**A minimal PHP/SQLite/Mustache website template.**
 
 This template is intended to be used for quick non-production hobby websites. It has the following design goal:
 
 * runnable from the PHP built in webserver to ease development straight from the repository
-* minimal dependencies PHP,  SQLite, 
+* minimal dependencies PHP, Composer, SQLite, Mustache
 
 ## Structure
 
@@ -32,12 +32,20 @@ sudo apt install php-cli php-sqlite3 sqlite3
 sudo apt install sqlitebrowser
 ```
 
+Install [Composer](https://getcomposer.org/) your preferred way.
+
 On the github repository page press the "use this template" button to "Create a new repository" (see [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template)).
 
 Clone your new repository locally.
 
 ```bash
 git clone https://github.com/eggplantpasta/myproject.git
+```
+
+Install the defined dependencies via composer.
+
+```bash
+composer install
 ```
 
 Create a local config files based on the examples and start the local PHP server.
