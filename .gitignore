@@ -4,7 +4,7 @@
 *.log
 vendor/
 var/*
-!var/.gitkeep
+!var/cache/mustache/.gitkeep
 
 config/php.ini
 config/app.ini
