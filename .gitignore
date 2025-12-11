@@ -6,5 +6,5 @@ vendor/
 var/*
 !var/cache/mustache/.gitkeep
 
-config/php.ini
 config/app.ini
+config/php.ini
