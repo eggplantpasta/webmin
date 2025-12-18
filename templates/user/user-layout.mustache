@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="color-scheme" content="light dark">
+        <title>{{$ title }}User Template{{/ title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="User subsystem.">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+        <link rel="stylesheet" href="/assets/css/webmin.css">
+    </head>
+
+<body>
+    <header  class="container">
+    <nav>
+        <ul>
+            <li><strong>Webmin</strong></li>
+        </ul>
+        <ul>
+            <li><a href="/user/login.php">Login</a></li>
+            <li><a href="/user/register.php">Register</a></li>
+            <li><a href="/user/reset-password.php">Password Reset</a></li>
+            <li><a href="/user/logout.php">Logout</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main class="container">
+    {{$ content }}
+
+    {{/ content }}
+    </main>
+
+    <footer class="container">
+        <small>WebMin <a href="https://github.com/eggplantpasta/webmin">development</a></small>
+    </footer>
+
+    <script src="/assets/js/webmin.js"></script>
+
+</body>
+</html>

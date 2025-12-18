@@ -1,0 +1,24 @@
+{{< user/user-layout }}
+
+{{$ title }}Login{{/ title }}
+
+{{$ content }}
+<h2>Login</h2>
+<form>
+  <fieldset>
+    <label>
+      User name
+      <input name="username" placeholder="mickydee" autocomplete="username" />
+    </label>
+    <label>
+      Password
+      <input type="password" name="password" placeholder="********" autocomplete="currentpassword" />
+    </label>
+  </fieldset>
+
+  <input type="submit" value="Login" />
+</form>
+<p>Don't have an account? <a href="/user/register.php">Register here</a>.</p>
+{{/ content }}
+
+{{/ user/user-layout }}
