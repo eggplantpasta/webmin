@@ -12,7 +12,7 @@ cd ${ROOT_DIR}/config
 # edit in place to replace template variables
 sed  -i.bak "s@{{ROOT_DIR}}@${ROOT_DIR}@" php.ini
 sed  -i.bak "s@{{ROOT_DIR}}@${ROOT_DIR}@" app.ini
-rm
+rm php.ini.bak app.ini.bak
 
 # Create the sample database
 cd ${ROOT_DIR}/db/
@@ -20,3 +20,6 @@ cd ${ROOT_DIR}/db/
 sqlite3 db.sqlite3 < reset.sql
 sqlite3 db.sqlite3 < create.sql
 sqlite3 db.sqlite3 < seed.sql
+
+# Install composer packages
+composer install --working-dir=${ROOT_DIR}
