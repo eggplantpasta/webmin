@@ -1,0 +1,13 @@
+/* Webmin CSS */
+  h1 {
+    --pico-color: #9062CA;
+  }
+
+  h1 a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  h1 a:hover {
+    text-decoration: underline;
+  }

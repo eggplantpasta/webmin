@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{$ title }}Template{{/ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HTML5 Example Page">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel="stylesheet" href="/assets/css/webmin.css">
+</head>
+<body>
+    <header>
+    {{> partials/logo }}
+    {{> partials/nav }}
+    </header>
+
+    {{$ content }}
+    <main>
+        <h2>Heading Here</h2>
+        <p>Content content content</p>
+    </main>
+    {{/ content }}
+
+  <footer>
+    <p>WebMin <a href="https://github.com/eggplantpasta/webmin">development</a></p>
+  </footer>
+
+  <script src="/assets/js/webmin.js"></script>
+
+</body>
+</html>

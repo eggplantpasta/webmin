@@ -6,6 +6,6 @@ $tpl = new Template($config['template']);
 $data['content'] = [
            'title' => 'Hello World',
            'heading' => 'Hello World!',
-           'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+           'content' => 'This is the content of the page.'
         ];
 echo $tpl->render('main', $data);
