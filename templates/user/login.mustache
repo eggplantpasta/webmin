@@ -3,22 +3,24 @@
 {{$ title }}Login{{/ title }}
 
 {{$ content }}
-<h2>Login</h2>
 <form>
+  <h2>Login</h2>
   <fieldset>
     <label>
       User name
-      <input name="username" placeholder="mickydee" autocomplete="username" />
+      <input name="username" placeholder="mickydee" autocomplete="username" required/>
     </label>
     <label>
       Password
-      <input type="password" name="password" placeholder="********" autocomplete="currentpassword" />
+      <input type="password" name="password" placeholder="********" autocomplete="currentpassword" required/>
     </label>
   </fieldset>
-
-  <input type="submit" value="Login" />
+    <fieldset class="grid">
+      <input type="reset" value="Cancel" class="secondary" />
+      <input type="submit" value="Login" />
+  </fieldset>
+  <p>Don't have an account? <a href="/user/register.php">Register here</a>.</p>
 </form>
-<p>Don't have an account? <a href="/user/register.php">Register here</a>.</p>
 {{/ content }}
 
 {{/ user/user-layout }}

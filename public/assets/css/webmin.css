@@ -1,13 +1,17 @@
 /* Webmin CSS */
-  h1 {
-    --pico-color: #9062CA;
-  }
+header a, header a:visited, 
+footer a, footer a:visited{
+  --pico-color: #9062CA;
+  text-decoration-color: var(--pico-color);
+}
 
-  h1 a {
-    text-decoration: none;
-    color: inherit;
-  }
+header a:hover,  footer a:hover {
+  --pico-primary-hover: #9062CA;
+} 
 
-  h1 a:hover {
-    text-decoration: underline;
-  }
+/* Form styling */
+
+form {
+  margin: 0 auto; 
+  max-width: 600px;
+}

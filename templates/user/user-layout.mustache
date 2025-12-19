@@ -13,15 +13,24 @@
 
 <body>
     <header  class="container">
-    <nav>
+    <nav class="logo">
         <ul>
-            <li><strong>Webmin</strong></li>
+            <li><strong><a href="/">Webmin👾</a></strong></li>
         </ul>
         <ul>
-            <li><a href="/user/login.php">Login</a></li>
-            <li><a href="/user/register.php">Register</a></li>
-            <li><a href="/user/reset-password.php">Password Reset</a></li>
-            <li><a href="/user/logout.php">Logout</a></li>
+            <li>
+                <details class="dropdown">
+                <summary>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/></g></svg>
+                </summary>
+                <ul>
+                    <li><a href="/user/login.php">Login</a></li>
+                    <li><a href="/user/register.php">Register</a></li>
+                    <li><a href="/user/reset-password.php">Password Reset</a></li>
+                    <li><a href="/user/logout.php">Logout</a></li>
+                </ul>
+                </details>
+            </li>
         </ul>
     </nav>
     </header>
@@ -33,7 +42,7 @@
     </main>
 
     <footer class="container">
-        <small>WebMin <a href="https://github.com/eggplantpasta/webmin">development</a></small>
+        <small>WebMin <a href="https://github.com/eggplantpasta/webmin">development <img src="/assets/images/github-mark.svg" alt="GitHub Logo" width="25" height="25"></a></small>
     </footer>
 
     <script src="/assets/js/webmin.js"></script>

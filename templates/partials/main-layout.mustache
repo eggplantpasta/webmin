@@ -10,8 +10,11 @@
 </head>
 <body>
     <header class="container">
-    {{> partials/logo }}
-    {{> partials/nav }}
+    <nav class="logo">
+        <ul>
+            <li><strong><a href="/">Webmin👾</a></strong></li>
+        </ul>
+    </nav>
     </header>
 
     {{$ content }}
@@ -21,8 +24,9 @@
     </main>
     {{/ content }}
 
+
   <footer class="container">
-    <p>WebMin <a href="https://github.com/eggplantpasta/webmin">development</a></p>
+        <small>WebMin <a href="https://github.com/eggplantpasta/webmin">development <img src="/assets/images/github-mark.svg" alt="GitHub Logo" width="25" height="25"></a></small>
   </footer>
 
   <script src="/assets/js/webmin.js"></script>

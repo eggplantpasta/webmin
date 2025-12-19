@@ -14,21 +14,30 @@
 
     <!-- Header -->
     <header class="container">
-      <hgroup>
-        <h1><a href="/">WebMin</a>👾</h1>
-        <p>A minimal <a href="https://www.php.net/">PHP</a>/<a href="https://www.sqlite.org/">SQLite</a> website template.</p>
-      </hgroup>
-    </header>
+    <nav class="logo">
+        <ul>
+            <li><strong><a href="/">Webmin👾</a></strong></li>
+        </ul>
+    </nav>
+    </header>     
     <!-- ./ Header -->
 
     <!-- Main -->
     <main class="container">
+        <h1>WebMin👾</h1>
+        <p>A minimal <a href="https://www.php.net/">PHP</a>/<a href="https://www.sqlite.org/">SQLite</a> website template.</p>
+
         <h2>Test pages</h2>
         <ul>
           <li><a href="/tests/info.php">PHP Info</a></li>
           <li><a href="/tests/bootstrap-test.php">PSR4 autoloader</a> test with a simple class.</li>
           <li><a href="/tests/db-test.php">SQLite database connection</a> test.</li>
           <li><a href="/tests/template-test.php">Template rendering</a> test.</li>
+        </ul>
+
+        <h2>Demo</h2>
+        <ul>
+          <li><a href="/user/account.php">User account</a> demo.</li>
         </ul>
 
         <h2>References</h2>
@@ -41,5 +50,9 @@
         </ul>
 
       </main>
+
+      <footer class="container">
+        <small>WebMin <a href="https://github.com/eggplantpasta/webmin">development <img src="/assets/images/github-mark.svg" alt="GitHub Logo" width="25" height="25"></a></small>
+      </footer>
   </body>
 </html>
