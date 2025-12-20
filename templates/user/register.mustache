@@ -3,25 +3,31 @@
 {{$ title }}Registration{{/ title }}
 
 {{$ content }}
-<form>
+<form action="{{form.action}}" method="post" novalidate>
   <h2>New Account</h2>
   <p>Please fill in this form to create an account.</p>
   <fieldset>
     <label>
       User name
-      <input name="username" placeholder="mickydee" autocomplete="username" />
+      <input name="username" placeholder="mickydee" autocomplete="username"
+      aria-invalid="{{form.usernameInvalid}}" aria-describedby="invalid-username" value="{{form.username}}"/>
+      <small id="invalid-username">{{form.usernameErr}}</small>
     </label>
     <label>
       Email
-      <input type="email" name="email" placeholder="mick.d.man@gmail.com" autocomplete="email" />
+      <input type="email" name="email" placeholder="mick.d.man@gmail.com" autocomplete="email"  
+      aria-invalid="{{form.emailInvalid}}" aria-describedby="invalid-email" value="{{form.email}}" />
+      <small id="invalid-email">{{form.emailErr}}</small>
     </label>
     <label>
       Password
-      <input type="password" name="password" placeholder="********" autocomplete="new-password" />
+      <input type="password" name="password" placeholder="********" autocomplete="new-password" 
+      aria-invalid="{{form.passwordInvalid}}" aria-describedby="invalid-password" value="{{form.password}}" />
+      <small id="invalid-password">{{form.passwordErr}}</small>
     </label>
   </fieldset>
   <fieldset class="grid">
-      <input type="reset" value="Cancel" class="secondary" />
+      <a href="/user/register.php"><input type="button" value="Cancel" onclick="window.location.href='/user/registration.php'" class="secondary" /></a>
       <input type="submit" value="Create Account" />
   </fieldset>
   <p>Already have an account? <a href="/user/login.php">Login here</a>.</p>
