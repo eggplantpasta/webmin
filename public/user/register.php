@@ -2,6 +2,7 @@
 
 use Webmin\Template;
 use Webmin\User;
+use Webmin\Database;
 
 $tpl = new Template($config['template']);
 
@@ -11,12 +12,13 @@ $data = ['form' => [
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $user = new User();
+    $db = new Database($config['database']['dsn']);
+    $user = new User($db);
 
     // Process form submission
     $user->username = trim($_POST['username'] ?? '');
     $user->email = trim($_POST['email'] ?? '');
-    $user->password = $_POST['password'] ?? '';
+    $user->password = trim($_POST['password'] ?? '');
 
     // Validate inputs
     $user->validateUsername();
@@ -38,7 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // If no errors, proceed with registration logic (e.g., save to database)
     if (empty($user->usernameErr) && empty($user->emailErr) && empty($user->passwordErr) && empty($user->confirmPasswordErr)) {
-        // Registration logic here
+        $user->register();
+        // Redirect to login page or another page after successful registration
+        header("Location: /user/login.php");
+        exit();
     }
 }
 

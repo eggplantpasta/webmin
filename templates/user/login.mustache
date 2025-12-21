@@ -3,20 +3,24 @@
 {{$ title }}Login{{/ title }}
 
 {{$ content }}
-<form>
+<form action="{{form.action}}" method="post" novalidate>
   <h2>Login</h2>
   <fieldset>
     <label>
       User name
-      <input name="username" placeholder="mickydee" autocomplete="username" required/>
+      <input name="username" placeholder="nickname" autocomplete="username"
+      aria-invalid="{{form.usernameInvalid}}" aria-describedby="invalid-username" value="{{form.username}}"/>
+      <small id="invalid-username">{{form.usernameErr}}</small>
     </label>
     <label>
       Password
-      <input type="password" name="password" placeholder="********" autocomplete="currentpassword" required/>
+      <input type="password" name="password" placeholder="********" autocomplete="current-password" 
+      aria-invalid="{{form.passwordInvalid}}" aria-describedby="invalid-password" value="{{form.password}}" />
+      <small id="invalid-password">{{form.passwordErr}}</small>
     </label>
   </fieldset>
-    <fieldset class="grid">
-      <input type="reset" value="Cancel" class="secondary" />
+  <fieldset class="grid">
+      <input type="button" value="Cancel" onclick="window.location.href='/user/login.php'" class="secondary" />
       <input type="submit" value="Login" />
   </fieldset>
   <p>Don't have an account? <a href="/user/register.php">Register here</a>.</p>

@@ -2,6 +2,8 @@
 
 namespace Webmin;
 
+use Database;
+
 class User {
 
     public $username = '';
@@ -12,6 +14,16 @@ class User {
     public $passwordErr = '';
     public $confirmPassword = '';
     public $confirmPasswordErr = '';
+
+    private $db;
+    public function __construct($db = null) {
+        if ($db) {
+            $this->db = $db;
+        }
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+    }
 
     public function validateUsername(): bool
     {
@@ -24,7 +36,16 @@ class User {
             $this->usernameErr = 'Username can only contain letters, numbers, and underscores.';
         }
 
-        return empty($this->usernameErrmsg);
+        if ($this->db) {  // Only check DB if $db is provided
+            $sql = "SELECT user_id FROM users WHERE username = :username";
+            $results = $this->db->query($sql, ['username' => $this->username]);
+
+            if (!empty($results)) {
+                $this->usernameErr = 'That username is already taken.';
+            }
+        }
+
+        return empty($this->usernameErr);
     }
 
     public function validateEmail(): bool
@@ -47,5 +68,84 @@ class User {
         }
 
         return empty($this->passwordErr);
+    }
+
+    public function validateConfirmPassword(): bool
+    {
+        if ($this->password !== $this->confirmPassword) {
+            $this->confirmPasswordErr = 'Passwords do not match.';
+        }
+
+        return empty($this->confirmPasswordErr);
+    }
+
+    public function validateLogin(): bool
+    {
+        if (empty(trim($this->username)) || is_null($this->username)) {
+            $this->usernameErr = 'Username cannot be empty.';
+        }
+
+        if (empty($this->password)) {
+            $this->passwordErr = 'Password cannot be empty.';
+        }
+
+        return empty($this->usernameErr) && empty($this->passwordErr);
+    }
+
+    public function register(): bool
+    {
+        if (!$this->db) {
+            throw new \Exception('Database connection required for registration.');
+        }
+
+        $sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
+        $params = [
+            'username' => $this->username,
+            'email' => $this->email,
+            'password' => password_hash($this->password, PASSWORD_DEFAULT),
+        ];
+
+        try {
+            $this->db->query($sql, $params);
+            return true;
+        } catch (\PDOException $e) {
+            return false;
+        }
+    }   
+
+    public function isLoggedIn(): bool
+    {
+        // Check session or cookie here as needed
+        return isset($_SESSION['user']);
+    }
+
+    public function logout(): void
+    {
+        // Clear session or cookie here as needed
+        session_unset();
+        session_destroy();
+    }
+
+    public function login(): bool
+    {
+        if (!$this->db) {
+            throw new \Exception('Database connection required for login.');
+        }
+
+        $sql = "SELECT * FROM users WHERE username = :username";
+        $results = $this->db->query($sql, ['username' => $this->username]);
+
+        if (!empty($results)) {
+            $hashedPassword = $results[0]['password'];
+            if (password_verify($this->password, $hashedPassword)) {
+                $results[0]['password'] = null;  // Clear password for security
+                // Set session and cookie
+                $_SESSION['user'] = $results[0];
+
+                return true;
+            }
+        }
+
+        return false;
     }
 }
