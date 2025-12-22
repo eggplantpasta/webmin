@@ -148,4 +148,9 @@ class User {
 
         return false;
     }
+
+    public function getSessionUser(): array
+    {
+        return $_SESSION['user'] ?? [];
+    }
 }
