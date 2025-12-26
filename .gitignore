@@ -8,3 +8,4 @@ var/*
 
 config/app.ini
 config/php.ini
+public/.DS_Store
