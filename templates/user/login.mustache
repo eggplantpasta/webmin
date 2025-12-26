@@ -14,6 +14,7 @@
     </label>
     <label>
       Password
+      <button class="password-toggle" type="button" aria-label="Toggle password visibility"></button>
       <input type="password" name="password" placeholder="********" autocomplete="current-password" 
       aria-invalid="{{form.passwordInvalid}}" aria-describedby="invalid-password" value="{{form.password}}" />
       <small id="invalid-password">{{form.passwordErr}}</small>
