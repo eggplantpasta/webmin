@@ -1,11 +1,14 @@
 # SQLite database file
 *.sqlite3
+
+# Environment variables
 .env
 *.log
 vendor/
 var/*
 !var/cache/mustache/.gitkeep
-
 config/app.ini
 config/php.ini
-public/.DS_Store
+
+# misc
+.DS_Store
