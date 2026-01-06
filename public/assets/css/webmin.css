@@ -7,13 +7,22 @@
 /* Webmin CSS */
 header a, header a:visited, 
 footer a, footer a:visited{
-  --pico-color: #9062CA;
-  text-decoration-color: var(--pico-color);
+  text-decoration-color: var(--pico-primary);
 }
 
 header a:hover,  footer a:hover {
-  --pico-primary-hover: #9062CA;
+  --pico-primary-hover: var(--pico-primary);
 } 
+
+.webmin-highlight {
+  color: var(--pico-primary);
+}
+
+/* Navigation styling */
+nav .webmin-nav-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
 
 /* Form styling */
 

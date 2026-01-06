@@ -7,27 +7,46 @@
         <title>{{$ title }}User Template{{/ title }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="User subsystem.">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.violet.min.css">
         <link rel="stylesheet" href="/assets/css/webmin.css">
     </head>
 
 <body>
     <header  class="container">
-    <nav class="logo">
+    <nav>
         <ul>
             <li><strong><a href="/">Webmin👾</a></strong></li>
         </ul>
         <ul>
             <li>
+                {{#user}}
+                    <span class="webmin-highlight">{{username}}</span>
+                {{/user}}
+                {{^user}}
+                    Login
+                {{/user}}
+            </li>
+            <li>
                 <details class="dropdown">
                 <summary>
+                    <span {{#user}}class="webmin-highlight"{{/user}}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/></g></svg>
+                    </span>
                 </summary>
                 <ul>
-                    <li><a href="/user/login.php">Login</a></li>
-                    <li><a href="/user/register.php">Register</a></li>
-                    <li><a href="/user/reset-password.php">Password Reset</a></li>
-                    <li><a href="/user/logout.php">Logout</a></li>
+                    {{#user}}
+                        <li class="webmin-nav-disabled">Login</li>
+                        <li class="webmin-nav-disabled">Register</li>
+                        <li><a href="/user/reset-password.php">Password Reset</a></li>
+                        <li><a href="/user/logout.php">Logout</a></li>
+                    {{/user}}
+                    {{^user}}
+                        <li><a href="/user/login.php">Login</a></li>
+                        <li><a href="/user/register.php">Register</a></li>
+                        <li class="webmin-nav-disabled">Password Reset</li>
+                        <li class="webmin-nav-disabled">Logout</li>
+                    {{/user}}
+ 
                 </ul>
                 </details>
             </li>
