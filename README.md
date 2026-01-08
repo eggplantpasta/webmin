@@ -5,7 +5,7 @@
 This template is intended to be used for quick non-production hobby websites. It has the following design goal:
 
 * runnable from the PHP built in webserver to ease development straight from the repository
-* minimal dependencies PHP, Composer, SQLite, Mustache
+* minimal dependencies PHP, Composer, SQLite, MustachePHP
 
 ## Structure
 
@@ -16,8 +16,9 @@ The structure of the project folders conforms mostly to the  [Standard PHP Packa
 * **/public** the entry point (web root)
 * **/src** classes and other included PHP code
 * **/db** DDL and DML used to build and seed the database as well as the SQLite data file itself
+* **/templates** Mustache templates
 
-## Getting Started (Debian based Linux)
+## Getting Started
 
 Install the prerequisites of PHP and SQLite.
 
@@ -42,13 +43,7 @@ Clone your new repository locally.
 git clone https://github.com/eggplantpasta/myproject.git
 ```
 
-Install the defined dependencies via composer.
-
-```bash
-composer install
-```
-
-Create a local config files based on the examples and start the local PHP server.
+Run the scripts that install the defined dependencies via composer, create local config files based on the examples, and start the local PHP server.
 
 ```bash
 bin/install.sh
@@ -57,25 +52,29 @@ bin/serve.sh
 
 Go to [the website homepage](http://localhost:8080).
 
-## Development
+## Examples
 
-_content coming_
+Simple example pages have been included to show how bits of the framework can be used.
 
-## Deployment
+* [The standard PHP Info page](http://localhost:8080/tests/info.php) *remove before deployment in production*.
+* A [simple class](http://localhost:8080/tests/bootstrap-test.php) example.
+* [SQLite database connection](http://localhost:8080/tests/db-test.php) example.
+* [Template rendering](http://localhost:8080/tests/template-test.php) example.
 
-_content coming_
+A more complicated example [user account system](http://localhost:8080/user/account.php) has been included with login, logout, registration, and password reset pages.
+
+## Limitations
+
+This is more of a learning platform than one that could be deployed in production. The user system especially is just an example and a real system would need to have many more features to be considered production ready.
+
+For real development use something like [Laravel](https://laravel.com/).
 
 ## References
 
 * [SQLite](https://www.sqlite.org/)
 * [PHP](https://www.php.net/) and [PHP The Right Way](https://phptherightway.com/)
 * [Pico CSS](https://picocss.com/) Minimal CSS framework for semantic HTML
+* [Mustache.php](https://github.com/bobthecow/mustache.php/wiki)
 * [Standard PHP Package Skeleton](https://github.com/php-pds/skeleton)
 * Stefan Huber's article on the [PHP built-in web server](https://stefanhuber.at/posts/php-builtin-webserver/)
 * [PSR-4](https://www.php-fig.org/psr/psr-4/) and [Build your own PSR-4 autoloader](https://pretzelhands.com/posts/build-your-own-psr-4-autoloader/)
-
-**PHP Manual >**
-
-* [Built-in web server](https://www.php.net/manual/en/features.commandline.webserver.php)
-* [Magic constants](https://www.php.net/manual/en/language.constants.magic.php)
-* [parse_ini_file](https://www.php.net/manual/en/function.parse-ini-file.php)
