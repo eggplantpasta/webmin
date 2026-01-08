@@ -4,6 +4,13 @@ use Webmin\Template;
 use Webmin\User;
 use Webmin\Database;
 
+// redirect to account page if already logged in
+$user = new User();
+if ($user->isLoggedIn()) {
+    header("Location: /user/account.php");
+    exit();
+}
+
 $tpl = new Template($config['template']);
 
 $data = ['form' => [
@@ -46,7 +53,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 }
-
-
 
 echo $tpl->render('user/register', $data);

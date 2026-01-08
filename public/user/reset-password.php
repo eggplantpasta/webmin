@@ -6,12 +6,16 @@ use Webmin\Database;
 
 $tpl = new Template($config['template']);
 
+// redirect to login page if not logged in
 $user = new User();
-$data['user'] = $user->getSessionUser();
+if (!$user->isLoggedIn()) {
+    header("Location: /user/login.php");
+    exit();
+}
 
-$data = array_merge($data, ['form' => [
-    'action' => htmlspecialchars($_SERVER["PHP_SELF"]),
-]]);
+$data = ['form' => [
+    'action' => htmlspecialchars($_SERVER["PHP_SELF"])],
+];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 

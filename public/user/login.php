@@ -4,9 +4,8 @@ use Webmin\Template;
 use Webmin\User;
 use Webmin\Database;
 
-$db = new Database($config['database']['dsn']);
-$user = new User($db);
-
+// redirect to account page if already logged in
+$user = new User();
 if ($user->isLoggedIn()) {
     header("Location: /user/account.php");
     exit();
@@ -20,6 +19,9 @@ $data = ['form' => [
 ];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $db = new Database($config['database']['dsn']);
+    $user = new User($db);
 
     // Process form submission
     $user->username = trim($_POST['username'] ?? '');
@@ -36,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'password' => $user->password,
         'passwordErr' => $user->passwordErr,
         'passwordInvalid' => !empty($user->passwordErr) ? 'true' : 'false',
-    
+
     ]);
 
     // If no errors, proceed with login logic (e.g., check credentials)
