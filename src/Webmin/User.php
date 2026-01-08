@@ -12,8 +12,6 @@ class User {
     public $emailErr = '';
     public $password = '';
     public $passwordErr = '';
-    public $newPassword = '';
-    public $newPasswordErr = '';
 
     private $db;
     public function __construct($db = null) {
@@ -70,17 +68,6 @@ class User {
         return empty($this->passwordErr);
     }
 
-    public function validateNewPassword(): bool
-    {
-        if (empty($this->newPassword)) {
-            $this->newPasswordErr = 'New password cannot be empty.';
-        } elseif (strlen($this->newPassword) < 8) {
-            $this->newPasswordErr = 'New password must be at least 8 characters long.';
-        }
-        
-        return empty($this->newPasswordErr);
-    }
-
     public function validateLogin(): bool
     {
         if (empty(trim($this->username)) || is_null($this->username)) {
@@ -113,9 +100,9 @@ class User {
         } catch (\PDOException $e) {
             return false;
         }
-    }   
+    }
 
-    public function updatePassword($userId, $newPassword): bool
+    public function updatePassword($userId, $password): bool
     {
         if (!$this->db) {
             throw new \Exception('Database connection required for updating password.');
@@ -123,7 +110,7 @@ class User {
 
         $sql = "UPDATE users SET password = :password WHERE user_id = :user_id";
         $params = [
-            'password' => password_hash($newPassword, PASSWORD_DEFAULT),
+            'password' => password_hash($password, PASSWORD_DEFAULT),
             'user_id' => $userId,
         ];
 
@@ -133,7 +120,7 @@ class User {
         } catch (\PDOException $e) {
             return false;
         }
-    }   
+    }
 
     public function isLoggedIn(): bool
     {
