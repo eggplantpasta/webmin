@@ -15,14 +15,14 @@
     </label>
     <label>
       Email
-      <input type="email" name="email" placeholder="name@mail.com" autocomplete="email"  
+      <input type="email" name="email" placeholder="name@mail.com" autocomplete="email"
       aria-invalid="{{form.emailInvalid}}" aria-describedby="invalid-email" value="{{form.email}}" />
       <small id="invalid-email">{{form.emailErr}}</small>
     </label>
     <label>
       Password
-      <button class="password-toggle" type="button" aria-label="Toggle password visibility"></button>
-      <input type="password" name="password" placeholder="********" autocomplete="new-password" 
+      <button class="password-toggle" type="button" tabindex="-1" aria-label="Toggle password visibility"></button>
+      <input type="password" name="password" placeholder="********" autocomplete="new-password"
       aria-invalid="{{form.passwordInvalid}}" aria-describedby="invalid-password" value="{{form.password}}" />
       <small id="invalid-password">{{form.passwordErr}}</small>
     </label>
