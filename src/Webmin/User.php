@@ -141,7 +141,7 @@ class User {
             throw new \Exception('Database connection required for login.');
         }
 
-        $sql = "SELECT * FROM users WHERE username = :username";
+        $sql = "SELECT * FROM users WHERE username = :username or email = :username";
         $results = $this->db->query($sql, ['username' => $this->username]);
 
         if (!empty($results)) {
